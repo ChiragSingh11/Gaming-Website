@@ -1,0 +1,271 @@
+
+
+.main {
+    background-color: black;
+    min-height: 92vh;
+}
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+
+.def {
+    z-index: 2;
+    position: relative;
+    top: 8vw;
+    width: 45vw;
+    height: 50vh;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: conic-gradient(from var(--angle), rgb(237, 64, 64), rgb(0, 255, 145), rgb(0, 183, 255),rgb(231, 58, 214), rgb(237, 64, 64) );
+    border-radius: 10px; 
+    animation: 3s spin linear infinite;
+}
+@keyframes spin {
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
+
+
+.def h3 {
+    text-align: center;
+    font-size: 48px;
+    color: #00ff00;
+    text-shadow: 
+    0 0 3px #00ff00,  
+    0 0 9px #00ff00;
+}
+.def p {
+    text-align: center;
+    font-size: 22px;
+    color: #00bcd4;
+    text-shadow: 
+    0 0 3px #00bcd4,  
+    0 0 6px #00ff00,
+}
+
+
+.heads {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(50vh - 17px);
+    width: calc(45vw - 17px);
+    background-color: black;
+    border-radius: 10px;
+}
+
+.img img{
+    width: 45vw;
+}
+.img{
+    padding: 1vw;
+    z-index: 1;
+    position: relative;
+    right: -30px;
+    top: 8vw;
+
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.line{
+    filter: blur(0.2rem);
+    height: 3px;
+    background-color: #00bcd4;
+    position: relative;
+    top: 25vh;
+    z-index: 1;
+}
+
+.line1{
+    filter: blur(0.2rem);
+    margin-top: 30px;
+    height: 3px;
+    width: 100%;
+    background-color: #00bcd4;
+    position: relative;
+    left: 0;
+    top: 0vh;
+    z-index: 1;
+    display: block;
+    clear: both;
+}
+
+
+.header2{
+    background-color: black;
+    
+}
+.rest{
+    position: relative;
+    z-index: 1;
+    min-height: 60vh;
+    background-color: black;
+    top: 30vh;
+    
+}
+.component1 img{
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+.card{
+    position: relative;
+    margin: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 50vh;
+    min-width: 20vw;
+    border: 3px solid #00bcd4;
+    border-radius: 15px;
+}
+
+.heading-card{
+    padding: 12px;
+    color: white;
+    font-size: 25px;
+}
+.para-card{
+    color: white;
+    font-size: 20px;
+    padding: 12px;
+}
+.read-btn{
+    color: white;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: rgb(66, 66, 237);
+    cursor: pointer;
+    transition: all 500ms;
+}
+.read-btn:hover{
+    background-color: rgb(2, 2, 255);
+}
+.content{
+    padding-top: 5vh;
+}
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+
+@media (max-width: 1500px) {
+    .def h3 {
+        font-size: 40px;
+    }
+    .def p{
+        font-size: 19px;
+    }
+}
+@media (max-width: 1400px) {
+    .card{
+        align-items: center;
+        justify-content: center;
+        margin: 50px;
+    }
+}
+@media (max-width: 1400px) {
+    .card{
+        margin: 20px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .def h3 {
+        font-size: 22px;
+    }
+    .def p{
+        font-size: 17px;
+    }
+}
+@media (max-width: 1060px) {
+    .def h3 {
+        font-size: 23px;
+    }
+    .def p{
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 850px) {
+    .def {
+        width: 90vw;
+        height: 45vh;
+    }
+    .def h3{
+        font-size: 22px;
+    }
+    .def p{
+        font-size: 16px;
+    }
+
+    .heads {
+        width: calc(90vw - 17px);
+        height: calc(45vh - 17px);
+    }
+    .header{
+        flex-direction: column;
+    }
+    .img img{
+        width: 90vw;
+    }
+    .img{
+        right: 0px;
+        top: 15vw;
+    
+    }
+    .line{
+        top: 20vh;
+    }
+}
+
+
+
+@media (max-width: 360px) {
+    .def h3 {
+        font-size: 20px;
+    }
+
+    .def {
+        height: 50vh;
+    }
+    .def p{
+        font-size: 14px;
+    }
+
+    .heads {
+        height: calc(50vh - 17px);
+    }
+}

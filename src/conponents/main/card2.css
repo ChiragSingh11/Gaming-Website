@@ -1,0 +1,334 @@
+/* Container styling */
+.slider-container {
+    min-height: 50vh;
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    background-color: black;
+    position: relative; /* Ensure it's positioned relative for proper placement of children */
+  }
+  
+  /* Loading container styling */
+  .loading-container {
+    width: 100%;
+    height: 300px; /* Same height as the cards container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: gray;
+    background-color: black; /* Match background color for consistency */
+  }
+  
+  /* Slider styling */
+  .slider {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    white-space: nowrap;
+  }
+  
+  .slider-track {
+    display: flex;
+    animation: scroll 40s linear infinite;
+  }
+  
+  .card {
+    flex: 0 0 auto;
+    width: 250px;
+    margin: 0 10px;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto; /* Adjust height dynamically */
+    overflow: hidden;
+    box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .card-heading {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  
+  .card-paragraph {
+    font-size: 1rem;
+    margin-top: 10px;
+    text-align: center;
+    overflow: hidden;
+    white-space: normal; /* Allow text to wrap to the next line */
+    word-wrap: break-word; /* Break long words if necessary */
+  }
+  
+  /* Animation keyframes */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .card {
+      width: 250px;
+      padding: 15px;
+    }
+  
+    .card-paragraph {
+      font-size: 0.9rem;
+      white-space: normal;
+      word-wrap: break-word;
+    }
+  
+    .slider-track {
+      animation-duration: 60s;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card {
+      width: 200px;
+      padding: 10px;
+    }
+  
+    .card-paragraph {
+      font-size: 0.8rem;
+      white-space: normal;
+      word-wrap: break-word;
+    }
+  
+    .slider-track {
+      animation-duration: 80s;
+    }
+  }
+  
+  .news {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 5vh;
+  }
+  
+  .button {
+    position: relative;
+    width: 11em;
+    height: 4em;
+    outline: none;
+    transition: 0.1s;
+    background-color: transparent;
+    border: none;
+    font-size: 13px;
+    font-weight: bold;
+    color: #ddebf0;
+  }
+  
+  #clip {
+    --color: #2761c3;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border: 5px double var(--color);
+    box-shadow: inset 0px 0px 15px #195480;
+    -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  }
+  
+  .arrow {
+    position: absolute;
+    transition: 0.2s;
+    background-color: #2761c3;
+    top: 35%;
+    width: 11%;
+    height: 30%;
+  }
+  
+  #leftArrow {
+    left: -13.5%;
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 50%);
+  }
+  
+  #rightArrow {
+    -webkit-clip-path: polygon(100% 49%, 0 0, 0 100%);
+    left: 102%;
+  }
+  
+  .button:hover #rightArrow {
+    background-color: #27c39f;
+    left: -15%;
+    animation: 0.6s ease-in-out both infinite alternate rightArrow8;
+  }
+  
+  .button:hover #leftArrow {
+    background-color: #27c39f;
+    left: 103%;
+    animation: 0.6s ease-in-out both infinite alternate leftArrow8;
+  }
+  
+  .corner {
+    position: absolute;
+    width: 4em;
+    height: 4em;
+    background-color: #2761c3;
+    box-shadow: inset 1px 1px 8px #2781c3;
+    transform: scale(1) rotate(45deg);
+    transition: 0.2s;
+  }
+  
+  #rightTop {
+    top: -1.98em;
+    left: 91%;
+  }
+  
+  #leftTop {
+    top: -1.96em;
+    left: -3.0em;
+  }
+  
+  #leftBottom {
+    top: 2.10em;
+    left: -2.15em;
+  }
+  
+  #rightBottom {
+    top: 45%;
+    left: 88%;
+  }
+  
+  .button:hover #leftTop {
+    animation: 0.1s ease-in-out 0.05s both changeColor8,
+    0.2s linear 0.4s both lightEffect8;
+  }
+  
+  .button:hover #rightTop {
+    animation: 0.1s ease-in-out 0.15s both changeColor8,
+    0.2s linear 0.4s both lightEffect8;
+  }
+  
+  .button:hover #rightBottom {
+    animation: 0.1s ease-in-out 0.25s both changeColor8,
+    0.2s linear 0.4s both lightEffect8;
+  }
+  
+  .button:hover #leftBottom {
+    animation: 0.1s ease-in-out 0.35s both changeColor8,
+    0.2s linear 0.4s both lightEffect8;
+  }
+  
+  .button:hover .corner {
+    transform: scale(1.25) rotate(45deg);
+  }
+  
+  .button:hover #clip {
+    animation: 0.2s ease-in-out 0.55s both greenLight8;
+    --color: #27c39f;
+  }
+  
+  @keyframes changeColor8 {
+    from {
+      background-color: #2781c3;
+    }
+  
+    to {
+      background-color: #27c39f;
+    }
+  }
+  
+  @keyframes lightEffect8 {
+    from {
+      box-shadow: 1px 1px 5px #27c39f;
+    }
+  
+    to {
+      box-shadow: 0 0 2px #27c39f;
+    }
+  }
+  
+  @keyframes greenLight8 {
+    from {
+    }
+  
+    to {
+      box-shadow: inset 0px 0px 32px #27c39f;
+    }
+  }
+  
+  @keyframes leftArrow8 {
+    from {
+      transform: translate(0px);
+    }
+  
+    to {
+      transform: translateX(10px);
+    }
+  }
+  
+  @keyframes rightArrow8 {
+    from {
+      transform: translate(0px);
+    }
+  
+    to {
+      transform: translateX(-10px);
+    }
+  }
+  .read-more-button {
+    display: inline-block;
+    background-color: #f39c12;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 0.9rem;
+  }
+  
+  .read-more-button:hover {
+    background-color: #e67e22;
+    transform: translateY(-3px);
+  }
+  
+  .read-more-button:active {
+    background-color: #d35400;
+    transform: translateY(0);
+  }
+  .giveaways-heading{
+    color: white;
+    font-size: 33px;
+    padding-bottom: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+/* Animation keyframes */
+@keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* Stop the animation when hovering over the slider container */
+  .slider:hover .slider-track {
+    animation-play-state: paused;
+  }
+  
